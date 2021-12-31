@@ -4,16 +4,21 @@ let playerScore = 0;
 let gameRound = 1;
 
 // computer selects either rock, paper or scissors.
-function computerPlay() {
+function getComputerChoice() {
     let randomIndex = Math.floor(Math.random() * 3);
     let choices = ["rock", "paper", "scissors"];
     return choices[randomIndex];
 }
 
+// Asks user for input.
+function getPlayerChoice() {
+    let playerChoice = prompt("What is your weapon? Rock, Paper or Scissors");
+    return playerChoice.toLowerCase();
+}
 
 // play single round of Rock Paper Scissors.
 function playRound(playerSelection, computerSelection) {
-    if (computerSelection == playerSelection.toLowerCase()) {
+    if (computerSelection == playerSelection) {
         return "Draw!"
     } else {
         if (playerSelection == "rock") {
@@ -49,8 +54,8 @@ function playRound(playerSelection, computerSelection) {
 function game() {
     alert("Welcome to Rock Paper Scissors. Choose your weapon wisely!!!")
     while (gameRound <= 5) {
-        let computerSelection = computerPlay();
-        let playerSelection = getUserChoice()
+        let computerSelection = getComputerChoice();
+        let playerSelection = getPlayerChoice()
         console.log(`Game round: ${gameRound}`);
         console.log(`Player: ${playerSelection} Cpu: ${computerSelection}`)
         console.log(playRound(playerSelection, computerSelection));
@@ -60,19 +65,13 @@ function game() {
         console.log();
     }
 
-    printScore();
+    printResult();
     // gameRound = 0;
 
 }
 
-// Asks user for input.
-function getUserChoice() {
-    let playerChoice = prompt("What is your weapon? Rock, Paper or Scissors");
-    return playerChoice.toLowerCase();
-}
-
 // Prints the winner at the end of the game.
-function printScore() {
+function printResult() {
     if (playerScore > computerScore) {
         console.log(`Player wins by ${playerScore} to ${computerScore}`);
     } else if (computerScore > playerScore) {
