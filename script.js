@@ -65,13 +65,13 @@ function game() {
         console.log();
     }
 
-    printResult();
+    printFinalResult();
     // gameRound = 0;
 
 }
 
 // Prints the winner at the end of the game.
-function printResult() {
+function printFinalResult() {
     if (playerScore > computerScore) {
         console.log(`Player wins by ${playerScore} to ${computerScore}`);
     } else if (computerScore > playerScore) {
