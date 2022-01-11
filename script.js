@@ -1,6 +1,6 @@
 // Game of Rock Paper Scissors.
-let computerScore = 3;
-let playerScore = 3;
+let computerScore = 0;
+let playerScore = 0;
 
 const buttons = document.querySelectorAll('button');
 const buttonsDiv = document.querySelector('.buttons');
