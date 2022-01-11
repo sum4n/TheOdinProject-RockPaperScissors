@@ -93,7 +93,7 @@ function printFinalResult() {
         // console.log("Game finished");
         if (playerScore > computerScore) {
             // console.log(`Player wins by ${playerScore} to ${computerScore}`);
-            winner.textContent = `Player wins by ${playerScore} to ${computerScore}`;
+            winner.textContent = `You win by ${playerScore} to ${computerScore}. CONGRADULATIONS!!!`;
         } else if (computerScore > playerScore) {
             // console.log(`You lose. Computer wins by ${computerScore} to ${playerScore}`)
             winner.textContent = `You lose. Computer wins by ${computerScore} to ${playerScore}`;
