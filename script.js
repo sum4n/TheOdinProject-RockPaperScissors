@@ -12,8 +12,6 @@ const winner = document.querySelector('#winner');
 buttons.forEach(buttonActive);
 
 function buttonActive(button) {
-    // if (button.id == "rock") return;
-    //console.log("button " + button.id);
     button.addEventListener('click', () => {
         playGame(button);
     });
@@ -30,8 +28,7 @@ function playGame(button) {
         playRound(playerChoice, computerChoice);
         printScores();
         printFinalResult();
-    }
-    
+    }   
 } 
 
 function printScores() {
@@ -100,20 +97,22 @@ function printFinalResult() {
         } else {
             // console.log("Its a draw!");
         }
-        addNewButton();
+        addNewGameButton();
     }
 }
 
 
 const startNewGameButton = document.createElement('button');
 
-function addNewButton() {
+function addNewGameButton() {
     startNewGameButton.textContent = "Start New Game";
 
     buttonsDiv.appendChild(startNewGameButton);
 }
 
-startNewGameButton.addEventListener('click', () => {
+startNewGameButton.addEventListener('click', startNewGame);
+
+function startNewGame() {
     playerScore = 0;
     computerScore = 0;
     choices[0].textContent = "";
@@ -123,4 +122,4 @@ startNewGameButton.addEventListener('click', () => {
     winner.textContent = "";
     roundResult.textContent = "";
     buttonsDiv.removeChild(startNewGameButton);
-})
+}
